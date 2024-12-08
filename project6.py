@@ -1,5 +1,5 @@
 """
-В html-файл данные выгружаются по запросу пользователя.
+В html-файл данные выгружаются только по запросу пользователя.
 """
 
 import os
@@ -13,7 +13,7 @@ class PriceMachine:
         self.result = []  # Результат последнего поиска
         self.name_length = 0  # Длина самого длинного названия продукта
 
-    def load_prices(self, folder_path='files_of_prices'):
+    def load_prices(self, folder_path=''):
         """Сканирует указанный каталог и загружает данные из CSV-файлов."""
         if not folder_path:
             folder_path = os.getcwd()
