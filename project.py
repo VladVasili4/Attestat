@@ -14,7 +14,7 @@ class PriceMachine:
         self.name_length = 0  # Длина самого длинного названия продукта
 
     def load_prices(self, folder_path=''):
-        """Сканирует указанный каталог и загружает данные из CSV-файлов."""
+        """Сканирует указанный каталог и загружает данные из "price"-файлов."""
         if not folder_path:
             folder_path = os.getcwd()
 
@@ -26,7 +26,7 @@ class PriceMachine:
         for file in files:
             file_path = os.path.join(folder_path, file)
             with open(file_path, mode='r', encoding='utf-8') as f:
-                reader = csv.reader(f, delimiter=',')  # Разделитель - запятая
+                reader = csv.reader(f, delimiter=',')  # Разделитель - запятая, а не точка с запятой, как в задании
                 headers = next(reader, None)
                 if headers:
                     product_idx, price_idx, weight_idx = self._search_product_price_weight(headers)
