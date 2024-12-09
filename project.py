@@ -18,7 +18,7 @@ class PriceMachine:
         if not folder_path:
             folder_path = os.getcwd()
 
-        files = [f for f in os.listdir(folder_path) if "price" in f.lower() and f.endswith(".csv")]
+        files = [f for f in os.listdir(folder_path) if "price" in f.lower()]
         if not files:
             print("Файлы не найдены.")
             return
